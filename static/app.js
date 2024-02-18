@@ -14,11 +14,13 @@ $(document).ready(function() {
      });
 
     async function getCupcakes() {
-        cupcakeList.empty();
         try {
             let res =  await axios.get(`http://127.0.0.1:5000/api/cupcakes`);
             const data = res.data.cupcakes;
-            if (data) loadCupcakeList(data);
+            if (data){
+                cupcakeList.empty();
+                loadCupcakeList(data);
+            } 
         } catch (err) {
             console.log(err);
             return;
