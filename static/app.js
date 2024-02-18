@@ -36,6 +36,11 @@ $(document).ready(function() {
         axios.post('http://127.0.0.1:5000/api/cupcakes', data)
         .then(function() { 
             getCupcakes();
+            inputFlavor.val('');
+            inputSize.val('');
+            inputRating.val('');
+            inputImage.val('');
+            inputFlavor.focus();
         })
         .catch(function(err) { 
             console.log(err); 
