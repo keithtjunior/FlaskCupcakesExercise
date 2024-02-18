@@ -31,7 +31,7 @@ $(document).ready(function() {
         let rating = inputRating.val().trim();
         let image = inputImage.val().trim();
         const data = {flavor, size, rating, image};
-        axios.post('/api/cupcakes', data)
+        axios.post('http://127.0.0.1:5000/api/cupcakes', data)
         .then(function() { 
             getCupcakes();
         })
